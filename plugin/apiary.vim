@@ -2,7 +2,7 @@ function! FetchBlueprint()
   let api_name = split(expand("%"), ':')[1]
   let blueprint = system("apiary fetch --output=/dev/fd/1 --api-name=" . shellescape(api_name))
   call append(0, split(blueprint, '\n'))
-  set filetype=apiblueprint
+  set filetype=apiblueprint.markdown
   normal gg
 endfunction
 
